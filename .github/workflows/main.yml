@@ -18,6 +18,6 @@ jobs:
         with: 
           server: root.atlasnetwork.uk
           username: archie
-          password: ${{ secrets.test }}
+          password: Winney74
           local-dir: ./
           server-dir: ./
