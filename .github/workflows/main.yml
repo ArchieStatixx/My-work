@@ -13,11 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Sync files to hosting
-        uses: ftp-deploy/ftp-deploy-action@v1
+      - name: Deploy using rsync
+        uses: burnett01/rsync-deployments@5.1
         with:
-          server: root.atlasnetwork.uk
-          username: archie
-          password: ${{ secrets.ftp_password }}
-          local-dir: ./
-          server-dir: ./
+          switches: -avzr --delete
+          path: ./
+          remote_path: ./
+          remote_host: root.atlasnetwork.uk
+          remote_user: archie
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
