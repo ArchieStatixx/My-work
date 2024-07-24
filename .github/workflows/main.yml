@@ -21,4 +21,4 @@ jobs:
           remote_path: ./
           remote_host: root.atlasnetwork.uk
           remote_user: archie
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
